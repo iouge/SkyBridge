@@ -14,7 +14,7 @@ primary_region = "atl"
   min_machines_running = 0
 
 [env]
-  SKYBRIDGE_BASEURL = "bearnai.fly.dev"
+  SKYBRIDGE_BASEURL = "bluesky.bearnai.com"
   SKYBRIDGE_SHOW_INDEX = true
   FLY_SWAP = true
 
