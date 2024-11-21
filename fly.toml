@@ -3,20 +3,27 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "bearnaibluesky"
+app = "bearnaiskybridge"
 primary_region = "atl"
+
+[build]
+image = "videah/skybridge:latest"
 
 [http_service]
   internal_port = 8080
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
-  min_machines_running = 1
+  min_machines_running = 0
 
 [env]
-  SKYBRIDGE_BASEURL = "bluesky.bearnai.com"
+  SKYBRIDGE_BASEURL = "bearnaiskybridge.bearnai.com"
   SKYBRIDGE_SHOW_INDEX = true
   FLY_SWAP = true
+  SKYBRIDGE_SECRET='451865' #you need to fill it, I taped random numbers and it worked
+  SKYBRIDGE_REQUIRE_AUTH_PASSWORD = true
+  SKYBRIDGE_AUTH_PASSWORD = '451865' #if above is true, it will be asked when you'll try to log in to you bsky account in the app
+  SKYBRIDGE_ALLOW_BACKFILL = true
 
 [mounts]
   source="skybridge_data"
@@ -33,3 +40,8 @@ primary_region = "atl"
   type = "requests"
   hard_limit = 999999
   soft_limit = 9999
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
