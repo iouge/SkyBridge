@@ -17,7 +17,7 @@ image = "videah/skybridge:latest"
   min_machines_running = 0
 
 [env]
-  SKYBRIDGE_BASEURL = "bearnaiskybridge.bearnai.com"
+  SKYBRIDGE_BASEURL = "bearnaiskybridge.fly.dev"
   SKYBRIDGE_SHOW_INDEX = true
   FLY_SWAP = true
   SKYBRIDGE_SECRET='451865' #you need to fill it, I taped random numbers and it worked
